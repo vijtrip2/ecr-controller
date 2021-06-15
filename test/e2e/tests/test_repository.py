@@ -36,6 +36,12 @@ DELETE_WAIT_AFTER_SECONDS = 10
 def ecr_client():
     return boto3.client("ecr")
 
+@pytest.mark.e2e_dangling_cleanup
+class TestE2EDanglingCleanup:
+
+    def test_cleanup(self):
+        assert False
+
 @service_marker
 @pytest.mark.canary
 class TestRepository:

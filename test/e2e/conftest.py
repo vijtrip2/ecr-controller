@@ -26,6 +26,9 @@ def pytest_configure(config):
         "markers", "canary: mark test to also run in canary tests"
     )
     config.addinivalue_line(
+        "markers", "e2e_dangling_cleanup: mark test to run as e2e dangling resource cleanup"
+    )
+    config.addinivalue_line(
         "markers", "service(arg): mark test associated with a given service"
     )
     config.addinivalue_line(
