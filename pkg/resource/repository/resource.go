@@ -84,12 +84,30 @@ func (r *resource) SetObjectMeta(meta metav1.ObjectMeta) {
 	r.ko.ObjectMeta = meta
 }
 
+// SetStatus will set the Status field for the resource
+func (r *resource) SetStatus(desired acktypes.AWSResource) {
+	r.ko.Status = desired.(*resource).ko.Status
+}
+
 // SetIdentifiers sets the Spec or Status field that is referenced as the unique
 // resource identifier
 func (r *resource) SetIdentifiers(identifier *ackv1alpha1.AWSIdentifiers) error {
-	if identifier.NameOrID == nil {
-		return ackerrors.MissingNameIdentifier
+	if r.ko.Status.ACKResourceMetadata == nil {
+		r.ko.Status.ACKResourceMetadata = &ackv1alpha1.ResourceMetadata{}
 	}
-	r.ko.Spec.Name = identifier.NameOrID
+	r.ko.Status.ACKResourceMetadata.ARN = identifier.ARN
+
+	f0, f0ok := identifier.AdditionalKeys["registryID"]
+	if f0ok {
+		r.ko.Status.RegistryID = &f0
+	}
+
 	return nil
+}
+
+// ClearStatus will return the copy of the resource without status field
+func (r *resource) ClearStatus() acktypes.AWSResource {
+	koCopy := r.ko.DeepCopy()
+	koCopy.Status = svcapitypes.RepositoryStatus{}
+	return &resource{koCopy}
 }

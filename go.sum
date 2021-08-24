@@ -26,6 +26,7 @@ github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a/go.mod h1:l
 github.com/aws-controllers-k8s/runtime v0.3.0 h1:cuaKAhru2+XqftIBb/QITMLmgDjf1SYNVerHVG7PvjE=
 github.com/aws-controllers-k8s/runtime v0.3.0/go.mod h1:xA2F18PJerBHaqrS4de1lpP7skeSMeStkmh+3x5sWvw=
 github.com/aws/aws-sdk-go v1.37.4/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
+github.com/aws/aws-sdk-go v1.37.10/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
 github.com/aws/aws-sdk-go v1.38.35 h1:7AlAO0FC+8nFjxiGKEmq0QLpiA8/XFr6eIxgRTwkdTg=
 github.com/aws/aws-sdk-go v1.38.35/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=

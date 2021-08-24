@@ -2,6 +2,8 @@ module github.com/aws-controllers-k8s/ecr-controller
 
 go 1.14
 
+replace github.com/aws-controllers-k8s/runtime => ../runtime
+
 require (
 	github.com/aws-controllers-k8s/runtime v0.3.0
 	github.com/aws/aws-sdk-go v1.38.35
