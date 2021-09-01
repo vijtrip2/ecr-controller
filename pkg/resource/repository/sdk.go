@@ -165,6 +165,11 @@ func (rm *resourceManager) newListRequestPayload(
 	if r.ko.Status.RegistryID != nil {
 		res.SetRegistryId(*r.ko.Status.RegistryID)
 	}
+	if r.ko.Spec.Name != nil {
+		f3 := []*string{}
+		f3 = append(f3, r.ko.Spec.Name)
+		res.SetRepositoryNames(f3)
+	}
 
 	return res, nil
 }
