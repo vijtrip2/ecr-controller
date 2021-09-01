@@ -20,6 +20,3 @@ resources:
         - Name
     update_operation:
       custom_method_name: customUpdateRepository
-operations:
-  DescribeRepositories:
-    primary_identifier_field_name: Name
